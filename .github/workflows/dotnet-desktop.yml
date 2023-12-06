@@ -1,0 +1,41 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Install Appium
+      run: npm install -g appium@1.22.3
+
+    - name: Start Appium server
+      run: appium &
+
+    - name: Build
+      run: dotnet build TestProject2/TestProject2.csproj
+
+    - name: Run NUnit tests
+      run: dotnet test TestProject1/TestProject1.csproj --configuration Release
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
