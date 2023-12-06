@@ -14,15 +14,15 @@ namespace TestProject1
         [Test]
         public void Test1()
         {
-            string githubWorkspace = Environment.GetEnvironmentVariable("GITHUB_WORKSPACE");
-            string apkPath = Path.Combine(githubWorkspace, "TestProject2", , "dk.resound.smart3d-Signed.apk");
+            //string githubWorkspace = Environment.GetEnvironmentVariable("GITHUB_WORKSPACE");
+            //string apkPath = Path.Combine(githubWorkspace, "TestProject2", , "dk.resound.smart3d-Signed.apk");
             var appiumOptions = new AppiumOptions();
             appiumOptions.AddAdditionalCapability("platformName", "Android");
             appiumOptions.AddAdditionalCapability("automationName", "UiAutomator2");
             appiumOptions.AddAdditionalCapability("deviceName", "Android Emulator");
             appiumOptions.AddAdditionalCapability("udid", "2C261FDH3003CJ");
             appiumOptions.AddAdditionalCapability("platform Version", "12");
-            appiumOptions.AddAdditionalCapability("app", apkPath);
+            appiumOptions.AddAdditionalCapability("app","..\\..\\TestProject2\\dk.resound.smart3d-Signed.apk");
             appiumOptions.AddAdditionalCapability("appPackage", "dk.resound.smart3d");
             //appiumOptions.AddAdditionalCapability("appActivity", "crc646f76f13f64c213ab.WelcomeScreenActivity");
             appiumOptions.AddAdditionalCapability("Appium Server Address", "127.0.0.1:4723");
