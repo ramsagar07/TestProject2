@@ -20,7 +20,7 @@ namespace TestProject1
             appiumOptions.AddAdditionalCapability("deviceName", "Android Emulator");
             appiumOptions.AddAdditionalCapability("udid", "2C261FDH3003CJ");
             appiumOptions.AddAdditionalCapability("platform Version", "12");
-            appiumOptions.AddAdditionalCapability("app", "C:\\Users\\iray\\source\\repos\\TestProject1\\TestProject1\\App\\dk.resound.smart3d-Signed.apk");
+            appiumOptions.AddAdditionalCapability("app", "/home/runner/work/TestProject2/dk.resound.smart3d-Signed.apk");
             appiumOptions.AddAdditionalCapability("appPackage", "dk.resound.smart3d");
             //appiumOptions.AddAdditionalCapability("appActivity", "crc646f76f13f64c213ab.WelcomeScreenActivity");
             appiumOptions.AddAdditionalCapability("Appium Server Address", "127.0.0.1:4723");
