@@ -16,7 +16,12 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '8'
-
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v2
+      with:
+        sdk-version: '30'  # Set the desired SDK version
+        accept-licenses: true
+        platform-tools-version: '31.0.0'  
     - name: Run adb devices
       run: adb devices
 
