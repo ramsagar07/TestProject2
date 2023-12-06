@@ -14,6 +14,8 @@ namespace TestProject1
         [Test]
         public void Test1()
         {
+            string githubWorkspace = Environment.GetEnvironmentVariable("GITHUB_WORKSPACE");
+            string apkPath = Path.Combine(githubWorkspace, "TestProject2", , "dk.resound.smart3d-Signed.apk");
             var appiumOptions = new AppiumOptions();
             appiumOptions.AddAdditionalCapability("platformName", "Android");
             appiumOptions.AddAdditionalCapability("automationName", "UiAutomator2");
