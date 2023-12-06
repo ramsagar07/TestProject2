@@ -16,6 +16,17 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '11'
+    - name: Set up Android Emulator
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 29
+        target: default
+        arch: x86
+
+    - name: Run your Android tests
+      run: |
+        ./gradlew assembleDebug
+        ./gradlew connectedCheck
     - name: Set up Android SDK
       uses: android-actions/setup-android@v2
       with:
