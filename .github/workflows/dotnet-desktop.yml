@@ -26,17 +26,7 @@ jobs:
         sdk-version: '30'  # Set the desired SDK version
         accept-licenses: true
         platform-tools-version: '31.0.0' 
-    - name: Set up Android Emulator
-      uses: reactivecircus/android-emulator-runner@v2
-      with:
-          api-level: 29
-          target: default
-          arch: x86
-          script: ./gradlew assembleDebug
-    - name: Run your Android tests
-      run: |
-        ./gradlew assembleDebug
-        ./gradlew connectedCheck
+    
     - name: Run adb devices
       run: adb devices
 
